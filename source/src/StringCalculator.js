@@ -6,7 +6,10 @@ var StringCalculator = {
 		if(!number_string){
 			return total;
 		}
-		numberArray = number_string.split(',');
+		if(number_string.indexOf(',\n') > 0){
+			throw 'input is NOT ok';
+		}
+		numberArray = number_string.split(/,|\n/);
 		for(var i = 0;i < numberArray.length;i++){
 			if(numberArray[i]) {
 				total += parseInt(numberArray[i]);
