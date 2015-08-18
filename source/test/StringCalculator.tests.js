@@ -6,4 +6,7 @@ describe('StringCalculator object', function () {
 	it('when one number is used then return value is that same number', function () {
          expect(StringCalculator.Add('1')).toEqual(1);
     });
+	it('when two numbers are used then return value is their sum', function () {
+		expect(StringCalculator.Add('1,2')).toEqual(1 + 2);
+	});	
 });
