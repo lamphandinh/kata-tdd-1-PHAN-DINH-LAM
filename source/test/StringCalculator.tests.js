@@ -26,4 +26,10 @@ describe('StringCalculator object', function () {
 	it('when delimiter is specified then it is used to separate numbers', function () {
 		expect(StringCalculator.Add('//;\n1;2')).toEqual(1 + 2);
 	});
+	it('when delimiter is specified then it is used to separate numbers', function () {
+		expect(StringCalculator.Add('//?\n1?2')).toEqual(1 + 2);
+	});
+	it('when delimiter is specified then it is used to separate numbers', function () {
+		expect(StringCalculator.Add('//??\n1??2??3')).toEqual(1 + 2 + 3);
+	});
 });
