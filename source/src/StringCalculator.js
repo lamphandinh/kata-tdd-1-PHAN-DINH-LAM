@@ -2,11 +2,10 @@
 var StringCalculator = {
 	Add: function (number_string){
 		var total = 0,
-		numberArray = [],
 		step3Excep = ',\n',
 		delimiter = /,|\n/,
 		start_string_contain_spec_delimiter = '//',
-		string_after_delimiter = number_string;
+		string_after_delimiter = number_string;	
 		
 		// string empty
 		if(!number_string){
@@ -28,12 +27,27 @@ var StringCalculator = {
 			
 		}
 		
-		numberArray = string_after_delimiter.split(delimiter);
+		total = StringCalculator.CountSumAfterSlit(string_after_delimiter,delimiter);
+		return total;
+	},
+	CountSumAfterSlit: function (numbers,delimiters){
+		var sum = 0,
+		nagative_number = [];
+		
+		var numberArray = numbers.split(delimiters);
 		for(var i = 0;i < numberArray.length;i++){
-			if(numberArray[i]) {
-				total += parseInt(numberArray[i]);
+			var num = numberArray[i];
+			if(num) {
+				if(parseInt(num) < 0){
+					nagative_number.push(num);
+				}					
+				sum += parseInt(num);
 			}		
 		}
-		return total;
+		if(nagative_number.length > 0){
+			throw 'negatives not allowed : ' + nagative_number.join(',');
+		}
+
+		return sum;
 	}
 }
