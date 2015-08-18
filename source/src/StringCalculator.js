@@ -7,6 +7,9 @@ var StringCalculator = {
 			return total;
 		}
 		numberArray = number_string.split(',');
+		if(numberArray.length > 2){
+			throw "quantity great than 2";
+		}
 		for(var i = 0;i < numberArray.length;i++){
 			total += parseInt(numberArray[i]);
 		}
