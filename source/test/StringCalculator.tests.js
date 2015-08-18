@@ -23,4 +23,7 @@ describe('StringCalculator object', function () {
 		  StringCalculator.Add('1,\n');
 		}).toThrow('input is NOT ok');
 	});
+	it('when delimiter is specified then it is used to separate numbers', function () {
+		expect(StringCalculator.Add('//;\n1;2')).toEqual(1 + 2);
+	});
 });
