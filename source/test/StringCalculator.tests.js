@@ -15,4 +15,12 @@ describe('StringCalculator object', function () {
 	it('when any number of numbers is used then return values are their sums', function () {
 		expect(StringCalculator.Add('1,2,3,4,,6')).toEqual(1 + 2 + 3 + 4 + 6);
 	});
+	it('when new line is used between numbers then return values are their sums', function () {
+		expect(StringCalculator.Add('1,2\n6')).toEqual(1 + 2 + 6);
+	});
+	it('when new line is used between numbers then return values are their sums', function () {
+		expect(function () {
+		  StringCalculator.Add('1,\n');
+		}).toThrow('input is NOT ok');
+	});
 });
