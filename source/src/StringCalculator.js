@@ -1,11 +1,15 @@
 ﻿// source code
 var StringCalculator = {
 	Add: function (number_string){
-		var total = 0;
+		var total = 0,
+		numberArray = [];
 		if(!number_string){
 			return total;
 		}
-		total += parseInt(number_string);
+		numberArray = number_string.split(',');
+		for(var i = 0;i < numberArray.length;i++){
+			total += parseInt(numberArray[i]);
+		}
 		return total;
 	}
 }
