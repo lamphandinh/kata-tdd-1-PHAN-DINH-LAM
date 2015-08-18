@@ -5,6 +5,7 @@ var StringCalculator = {
 		if(!number_string){
 			return total;
 		}
-		return parseInt(number_string);
+		total += parseInt(number_string);
+		return total;
 	}
 }
