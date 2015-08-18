@@ -32,4 +32,14 @@ describe('StringCalculator object', function () {
 	it('when delimiter is specified then it is used to separate numbers', function () {
 		expect(StringCalculator.Add('//??\n1??2??3')).toEqual(1 + 2 + 3);
 	});
+	it('when nagative number is used then throw exception', function () {
+		expect(function () {
+		  StringCalculator.Add('1,2,3,-4,5,6');
+		}).toThrow('negatives not allowed : -4');
+	});
+	it('when nagative number is used then throw exception', function () {
+		expect(function () {
+		  StringCalculator.Add('1,-2,3,-4,-5,6');
+		}).toThrow('negatives not allowed : -2,-4,-5');
+	});
 });
