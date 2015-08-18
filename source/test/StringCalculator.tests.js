@@ -12,4 +12,7 @@ describe('StringCalculator object', function () {
 	it('when any number of numbers is used then return values are their sums', function () {
 		expect(StringCalculator.Add('1,2,3,4,5,6')).toEqual(1 + 2 + 3 + 4 + 5 + 6);
 	});
+	it('when any number of numbers is used then return values are their sums', function () {
+		expect(StringCalculator.Add('1,2,3,4,,6')).toEqual(1 + 2 + 3 + 4 + 6);
+	});
 });
