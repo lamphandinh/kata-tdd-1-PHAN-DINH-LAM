@@ -8,7 +8,9 @@ var StringCalculator = {
 		}
 		numberArray = number_string.split(',');
 		for(var i = 0;i < numberArray.length;i++){
-			total += parseInt(numberArray[i]);
+			if(numberArray[i]) {
+				total += parseInt(numberArray[i]);
+			}		
 		}
 		return total;
 	}
