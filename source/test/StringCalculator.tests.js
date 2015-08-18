@@ -8,5 +8,10 @@ describe('StringCalculator object', function () {
     });
 	it('when two numbers are used then return value is their sum', function () {
 		expect(StringCalculator.Add('1,2')).toEqual(1 + 2);
+	});
+	it('when three numbers are used then excetion is throw', function () {
+		expect(function () {
+			StringCalculator.Add('1, 2, 3');
+        }).toThrow('quantity great than 2');
 	});	
 });
