@@ -45,4 +45,10 @@ describe('StringCalculator object', function () {
 	it('when number is used great than 1000 then not add it', function () {
 		expect(StringCalculator.Add('1,2,1000,1001,6')).toEqual(1 + 2 + 1000 + 6);
 	});
+	it('when multiple delimiters are specified then they are used to separate numbers', function () {
+		expect(StringCalculator.Add('//[***]\n1***2***3')).toEqual(1 + 2 + 3);
+	});
+	it('when multiple delimiters are specified then they are used to separate numbers', function () {
+		expect(StringCalculator.Add('//[***][%]\n1***2***3%4')).toEqual(1 + 2 + 3 + 4);
+	});
 });
