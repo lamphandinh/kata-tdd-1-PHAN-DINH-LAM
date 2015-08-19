@@ -42,4 +42,7 @@ describe('StringCalculator object', function () {
 		  StringCalculator.Add('1,-2,3,-4,-5,6');
 		}).toThrow('negatives not allowed : -2,-4,-5');
 	});
+	it('when number is used great than 1000 then not add it', function () {
+		expect(StringCalculator.Add('1,2,1000,1001,6')).toEqual(1 + 2 + 1000 + 6);
+	});
 });
