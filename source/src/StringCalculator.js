@@ -41,7 +41,9 @@ var StringCalculator = {
 				if(parseInt(num) < 0){
 					nagative_number.push(num);
 				}					
-				sum += parseInt(num);
+				if(parseInt(num) <= 1000){
+					sum += parseInt(num);
+				}
 			}		
 		}
 		if(nagative_number.length > 0){
